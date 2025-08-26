@@ -13,7 +13,7 @@
 
         <PackageId>Arch.System.SourceGenerator</PackageId>
         <Title>Arch.System.SourceGenerator</Title>
-        <Version>2.1.0</Version>
+        <Version>2.1.0-custom</Version>
         <Authors>genaray</Authors>
         <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
         <Description>A source generator for arch.system.</Description>
