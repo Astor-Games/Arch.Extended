@@ -40,6 +40,19 @@ public unsafe struct UnsafeList<T> : IList<T>, IDisposable where T : unmanaged
         Capacity = capacity;
         _array = new UnsafeArray<T>(ptr, capacity);
     }
+    
+    /// <summary>
+    ///  Creates an instance of the <see cref="UnsafeList{T}"/> using a span as its initial value.
+    ///  The initial count of the list will match the span.
+    public UnsafeList(Span<T> from)
+    {
+        Count = from.Length;
+        Capacity = from.Length;
+        fixed(T* fromPtr = from)
+        {
+            _array = new UnsafeArray<T>(fromPtr, from.Length);
+        }
+    }
 
     /// <summary>
     ///     The amount of items in the list.
